@@ -202,7 +202,8 @@ function setCharacteristics(rl) {
                 character.whand = whand;
                 console.log(`Your weaponhand is ${character.whand}.`)
                 console.log("**********************************************************************************************************************");
-                setSkills(rl);
+                let counter = 2;
+                setSkills(rl, counter);
             });
         });
     });
@@ -236,7 +237,8 @@ function chooseRace(rl) {
     });
 }
 
-function setSkills(rl) {
+function setSkills(rl, counter) {
+    let c = counter;
     let st = 0;
     let gs = 0;
     let gw = 0;
@@ -285,9 +287,10 @@ function setSkills(rl) {
     console.log("INTELLIGENCE: ", wi);
     console.log("MAGICAL TALENT: ", zt);
     console.log("-------------------------")
-    rl.question('Are you okay with that? Type r to repeat. ', (answer) => {
-        if (answer === "r") {
-            setSkills(rl);
+    rl.question('Are you okay with that? Type r to repeat. You can repeat ' + c + ' time/s ', (answer) => {
+        if (answer === "r" && c !== 0) {
+            c--;
+            setSkills(rl, c);
         } else {
             character.st = st;
             character.gs = gs;
