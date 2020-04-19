@@ -16,7 +16,7 @@ function chooseGender() {
     console.log("\\________| |__|   |__| |__|    |__| |__| \\__\\  \\_______/ |________| |_|   \\___|      ||  __/________\\__");    
     
     console.log("**********************************************************************************************************************")
-    console.log("Created by Oliver Ziemann | 2020 | Version 1.0.0")
+    console.log("Created by Oliver Ziemann | 2020 | Version 1.0.1")
     console.log("This tool is used to create a Character based on the Rules of MIDGARD 5. ")
     console.log("**********************************************************************************************************************")
     const rl = readline.createInterface({
@@ -423,6 +423,7 @@ function chooseClass(rl) {
 function setState(rl){
     console.log("Your character need to be part of a social enviroment. \nHe can be part of the Slaves, the social lower class, social middle class or the aristocracy. \nThe social enviroment depends partly on the class of the character.")
     let rdm = Math.round(Math.random()*100 + 1);
+    console.log(rdm);
     let status = "";
     
     if(character.class === "Ba" || character.class === "PB" || character.class === "PS"){ rdm = rdm + 20};
@@ -432,9 +433,9 @@ function setState(rl){
     
     if(rdm > 100){rdm = 100};
     if(rdm <= 10){status = "Unfree People"};
-    if(rdm <= 50){status = "Lower Class"};
-    if(rdm <= 90){status = "Middle Class"};
-    if(rdm <= 100){status = "Aristocracy"};
+    if(rdm > 10){status = "Lower Class"};
+    if(rdm > 50){status = "Middle Class"};
+    if(rdm > 90){status = "Aristocracy"};
 
     console.log(`Your character is part of the ${status}`)
     character.status = status;
