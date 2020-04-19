@@ -1,0 +1,94 @@
+{
+    "specialAbilities": {
+        "vision": {
+            "name": "vision",
+            "value": -2,
+            "prop": 5
+        },
+        "listening": {
+            "name": "listening",
+            "value": -2,
+            "prop": 10
+        },
+        "smell": {
+            "name": "smell",
+            "value": -2,
+            "prop": 15
+        },
+        "sixthSense": {
+            "name": "sixth sense",
+            "value": 2,
+            "prop": 20
+        },
+        "visionA": {
+            "name": "vision",
+            "value": 2,
+            "prop": 30
+        },
+        "listeningA": {
+            "name": "listening",
+            "value": 2,
+            "prop": 40
+        },
+        "smellA": {
+            "name": "smell",
+            "value": 2,
+            "prop": 50
+        },
+        "nightVision": {
+            "name": "night vision",
+            "value": 2,
+            "prop": 55
+        },
+        "goodReflexes": {
+            "name": "good reflexes",
+            "value": 9,
+            "prop": 60
+        },
+        "senseOfOrientation": {
+            "name": "sense of orientation",
+            "value": 12,
+            "prop": 65
+        },
+        "toughness": {
+            "name": "toughness",
+            "value": 9,
+            "prop": 70
+        },
+        "insensitivityToPain": {
+            "name": "insensitivity to pain",
+            "value": 9,
+            "prop": 75
+        },
+        "drinking": {
+            "name": "drinking",
+            "value": 12,
+            "prop": 80
+        },
+        "alertness": {
+            "name": "alertness",
+            "value": 6,
+            "prop": 85
+        },
+        "recognition": {
+            "name": "recognition",
+            "value": 8,
+            "prop": 90
+        },
+        "memorable": {
+            "name": "memorable",
+            "value": 4,
+            "prop": 95
+        },
+        "passageOfBerserk": {
+            "name": "passage of berserk",
+            "value": "18-WK/5",
+            "prop": 99
+        },
+        "choose": {
+            "name": "choose of ability + second roll",
+            "value": "?",
+            "prop": 100
+        }
+    }
+}
