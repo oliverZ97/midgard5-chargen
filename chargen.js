@@ -16,7 +16,7 @@ function chooseGender() {
     console.log("\\________| |__|   |__| |__|    |__| |__| \\__\\  \\_______/ |________| |_|   \\___|      ||  __/________\\__");    
     
     console.log("**********************************************************************************************************************")
-    console.log("Created by Oliver Ziemann | 2020 | Version 1.0.1")
+    console.log("Created by Oliver Ziemann | 2020 | Version 1.0.2")
     console.log("This tool is used to create a Character based on the Rules of MIDGARD 5. ")
     console.log("**********************************************************************************************************************")
     const rl = readline.createInterface({
@@ -620,6 +620,7 @@ function chooseAbilities(rl){
     console.log("**********************************************************************************************************************");
     specialAbility(rl)
 }
+
 function specialAbility(rl) {
     console.log("You have the possibility to have a random special ability. \nBut it could be a bad one too, dont worry only with a chance of 15%");
     console.log("Every race except the human already got some special abilities and can get a extra one here.");
@@ -628,6 +629,51 @@ function specialAbility(rl) {
     console.log("Halfling:  good reflexes +9    smell +2");
     console.log("Gnome:     night vision +2     toughness +12       listening +2");
     console.log("**********************************************************************************************************************");
+    let spAbil = [];
+    switch(character.race){
+        case "elf":
+            spAbil.push({
+                name: "night vision",
+                value: 2
+            });
+            break;
+        case "dwarf":
+            spAbil.push({
+                name: "night vision",
+                value: 2
+            },
+            {
+                name: "toughness",
+                value: 9
+            });
+            break;
+        case "halfling":
+            spAbil.push({
+                name: "good reflexes",
+                value: 9
+            },
+            {
+                name: "smell",
+                value: 2
+            });
+            break;
+        case "gnome":
+            spAbil.push({
+                name: "night vision",
+                value: 2
+            },
+            {
+                name: "toughness",
+                value: 12
+            },
+            {
+                name: "listening",
+                value: 2
+            });
+            break;
+    }
+    //console.log(spAbil);
+    //character.spAbil = spAbil;
     rl.question("Should your character get a special ability? ", (answer) => {
         if(answer === "y" || answer === "yes"){
             let abil = JSON.parse(fs.readFileSync("./lib/specialAbilities.json"));
@@ -636,14 +682,17 @@ function specialAbility(rl) {
             let isChosen = false;
             abilArr.forEach((elem) =>{
                 if(rdm <= elem[1].prop && !isChosen){
-                    console.log(elem[1].name + ": " + elem[1].value);
                     isChosen = true;
-                    character.spAbil = {
-                        name: elem[1].name,
-                        value: elem[1].value
-                    };
+                    spAbil.push(
+                        {
+                            name: elem[1].name,
+                            value: elem[1].value
+                        })
                 }
             })
+            character.spAbil = spAbil;
+            console.log("Your character has the following special abilities:")
+            console.log(spAbil);
             sumUpInformations(rl);
         } else {
             sumUpInformations(rl);
@@ -672,6 +721,15 @@ function sumUpInformations(rl) {
             })
         }
     })
+}
+
+function formatSpecialAbilities(){
+    let arr = character.spAbil;
+    let str="";
+    arr.forEach((elem) => {
+        str += "(" + elem.name + ": " + elem.value + ") |\t";
+    });
+    return str;
 }
 
 function saveSheetInFile(){
@@ -714,7 +772,8 @@ function setContentToFile(){
     "---------------------------------------------------------------------------------------------------------------------------\n" +     
     "BORN ABILITIES:\n" + 
     "BASHING: " + `${character.bashing}`.padStart(19) + "\tDRINKING: " + `${character.drinking}`.padStart(10) + "\n" +
-    "RECOGNITION: " + `${character.recognition}`.padStart(15) + "\tSPECIAL ABILITY: (" + `${character.spAbil.name}` + ") " + `${character.spAbil.value}` + "\n" + 
+    "RECOGNITION: " + `${character.recognition}`.padStart(15) + "\n" +
+    "SPECIAL ABILITIES: " + `${formatSpecialAbilities()}` + "\n" + 
     "---------------------------------------------------------------------------------------------------------------------------\n" +
     "LEARNED ABILITIES:\n" +
     "\n\n\n\n\n\n\n\n\n\n" +
