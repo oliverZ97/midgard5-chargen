@@ -672,11 +672,18 @@ function specialAbility(rl) {
             });
             break;
     }
-    //console.log(spAbil);
-    //character.spAbil = spAbil;
     rl.question("Should your character get a special ability? ", (answer) => {
         if(answer === "y" || answer === "yes"){
-            let abil = JSON.parse(fs.readFileSync("./lib/specialAbilities.json"));
+            specialAbilityChooser(spAbil)
+            sumUpInformations(rl);
+        } else {
+            sumUpInformations(rl);
+        }
+    })
+}
+
+function specialAbilityChooser(spAbil) {
+    let abil = JSON.parse(fs.readFileSync("./lib/specialAbilities.json"));
             let rdm = Math.round(Math.min(Math.random()*100 + 1, 100));
             let abilArr = Object.entries(abil.specialAbilities);
             let isChosen = false;
@@ -690,14 +697,14 @@ function specialAbility(rl) {
                         })
                 }
             })
-            character.spAbil = spAbil;
-            console.log("Your character has the following special abilities:")
-            console.log(spAbil);
-            sumUpInformations(rl);
-        } else {
-            sumUpInformations(rl);
-        }
-    })
+            if(rdm === 100){
+                console.log("Congratulations! You have the option to choose one of the special abilities by yourself. You can find a list with the special abilities on page 27 of Midgard- der Kodex. \n You also get a second roll on a extra special ability.");
+                specialAbilityChooser(spAbil)
+            } else {
+                character.spAbil = spAbil;
+                console.log("Your character has the following special abilities:")
+                console.log(spAbil);
+            }
 }
 
 function sumUpInformations(rl) {
