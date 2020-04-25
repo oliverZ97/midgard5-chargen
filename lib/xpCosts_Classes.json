@@ -1,0 +1,589 @@
+{
+    "ability_groups": {
+        "everyday": {
+            "lang_de": "Alltag",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 20
+                },
+                {
+                    "name": "Gl",
+                    "xp": 20
+                },
+                {
+                    "name": "Hä",
+                    "xp": 10
+                },
+                {
+                    "name": "Kr",
+                    "xp": 20
+                },
+                {
+                    "name": "Sp",
+                    "xp": 20
+                },
+                {
+                    "name": "Wa",
+                    "xp": 20
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 20
+                },
+                {
+                    "name": "Dr",
+                    "xp": 20
+                },
+                {
+                    "name": "Hx",
+                    "xp": 20
+                },
+                {
+                    "name": "Ma",
+                    "xp": 20
+                },
+                {
+                    "name": "PB",
+                    "xp": 20
+                },
+                {
+                    "name": "PS",
+                    "xp": 20
+                },
+                {
+                    "name": "Sc",
+                    "xp": 20
+                }
+            ]
+        },
+        "outdoor": {
+            "lang_de": "Freiland",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 10
+                },
+                {
+                    "name": "Gl",
+                    "xp": 30
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 30
+                },
+                {
+                    "name": "Sp",
+                    "xp": 30
+                },
+                {
+                    "name": "Wa",
+                    "xp": 10
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 20
+                },
+                {
+                    "name": "Dr",
+                    "xp": 10
+                },
+                {
+                    "name": "Hx",
+                    "xp": 20
+                },
+                {
+                    "name": "Ma",
+                    "xp": 30
+                },
+                {
+                    "name": "PB",
+                    "xp": 30
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 10
+                }
+            ]
+        },
+        "halfworld": {
+            "lang_de": "Halbwelt",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 30
+                },
+                {
+                    "name": "Gl",
+                    "xp": 10
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 30
+                },
+                {
+                    "name": "Sp",
+                    "xp": 10
+                },
+                {
+                    "name": "Wa",
+                    "xp": 20
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 40
+                },
+                {
+                    "name": "Dr",
+                    "xp": 40
+                },
+                {
+                    "name": "Hx",
+                    "xp": 30
+                },
+                {
+                    "name": "Ma",
+                    "xp": 40
+                },
+                {
+                    "name": "PB",
+                    "xp": 30
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 40
+                }
+            ]
+        },
+        "fight": {
+            "lang_de": "Kampf",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 30
+                },
+                {
+                    "name": "Bb",
+                    "xp": 10
+                },
+                {
+                    "name": "Gl",
+                    "xp": 20
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 10
+                },
+                {
+                    "name": "Sp",
+                    "xp": 40
+                },
+                {
+                    "name": "Wa",
+                    "xp": 20
+                },
+                {
+                    "name": "Ba",
+                    "xp": 30
+                },
+                {
+                    "name": "Or",
+                    "xp": 20
+                },
+                {
+                    "name": "Dr",
+                    "xp": 40
+                },
+                {
+                    "name": "Hx",
+                    "xp": 40
+                },
+                {
+                    "name": "Ma",
+                    "xp": 40
+                },
+                {
+                    "name": "PB",
+                    "xp": 40
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 40
+                }
+            ]
+        },
+        "body": {
+            "lang_de": "Körper",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 10
+                },
+                {
+                    "name": "Bb",
+                    "xp": 10
+                },
+                {
+                    "name": "Gl",
+                    "xp": 30
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 20
+                },
+                {
+                    "name": "Sp",
+                    "xp": 10
+                },
+                {
+                    "name": "Wa",
+                    "xp": 10
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 10
+                },
+                {
+                    "name": "Dr",
+                    "xp": 20
+                },
+                {
+                    "name": "Hx",
+                    "xp": 30
+                },
+                {
+                    "name": "Ma",
+                    "xp": 30
+                },
+                {
+                    "name": "PB",
+                    "xp": 30
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 20
+                }
+            ]
+        },
+        "social": {
+            "lang_de": "Sozial",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 30
+                },
+                {
+                    "name": "Gl",
+                    "xp": 10
+                },
+                {
+                    "name": "Hä",
+                    "xp": 10
+                },
+                {
+                    "name": "Kr",
+                    "xp": 20
+                },
+                {
+                    "name": "Sp",
+                    "xp": 10
+                },
+                {
+                    "name": "Wa",
+                    "xp": 30
+                },
+                {
+                    "name": "Ba",
+                    "xp": 10
+                },
+                {
+                    "name": "Or",
+                    "xp": 20
+                },
+                {
+                    "name": "Dr",
+                    "xp": 30
+                },
+                {
+                    "name": "Hx",
+                    "xp": 20
+                },
+                {
+                    "name": "Ma",
+                    "xp": 30
+                },
+                {
+                    "name": "PB",
+                    "xp": 10
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 20
+                }
+            ]
+        },
+        "underworld": {
+            "lang_de": "Unterwelt",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 10
+                },
+                {
+                    "name": "Bb",
+                    "xp": 30
+                },
+                {
+                    "name": "Gl",
+                    "xp": 30
+                },
+                {
+                    "name": "Hä",
+                    "xp": 40
+                },
+                {
+                    "name": "Kr",
+                    "xp": 30
+                },
+                {
+                    "name": "Sp",
+                    "xp": 10
+                },
+                {
+                    "name": "Wa",
+                    "xp": 30
+                },
+                {
+                    "name": "Ba",
+                    "xp": 40
+                },
+                {
+                    "name": "Or",
+                    "xp": 40
+                },
+                {
+                    "name": "Dr",
+                    "xp": 40
+                },
+                {
+                    "name": "Hx",
+                    "xp": 30
+                },
+                {
+                    "name": "Ma",
+                    "xp": 40
+                },
+                {
+                    "name": "PB",
+                    "xp": 40
+                },
+                {
+                    "name": "PS",
+                    "xp": 40
+                },
+                {
+                    "name": "Sc",
+                    "xp": 40
+                }
+            ]
+        },
+        "weapon": {
+            "lang_de": "Waffen",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 20
+                },
+                {
+                    "name": "Gl",
+                    "xp": 20
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 10
+                },
+                {
+                    "name": "Sp",
+                    "xp": 20
+                },
+                {
+                    "name": "Wa",
+                    "xp": 20
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 20
+                },
+                {
+                    "name": "Dr",
+                    "xp": 40
+                },
+                {
+                    "name": "Hx",
+                    "xp": 40
+                },
+                {
+                    "name": "Ma",
+                    "xp": 40
+                },
+                {
+                    "name": "PB",
+                    "xp": 40
+                },
+                {
+                    "name": "PS",
+                    "xp": 30
+                },
+                {
+                    "name": "Sc",
+                    "xp": 40
+                }
+            ]
+        },
+        "knowledge": {
+            "lang_de": "Wissen",
+            "xp_costs": [
+                {
+                    "name": "As",
+                    "xp": 20
+                },
+                {
+                    "name": "Bb",
+                    "xp": 40
+                },
+                {
+                    "name": "Gl",
+                    "xp": 20
+                },
+                {
+                    "name": "Hä",
+                    "xp": 20
+                },
+                {
+                    "name": "Kr",
+                    "xp": 40
+                },
+                {
+                    "name": "Sp",
+                    "xp": 30
+                },
+                {
+                    "name": "Wa",
+                    "xp": 20
+                },
+                {
+                    "name": "Ba",
+                    "xp": 20
+                },
+                {
+                    "name": "Or",
+                    "xp": 30
+                },
+                {
+                    "name": "Dr",
+                    "xp": 10
+                },
+                {
+                    "name": "Hx",
+                    "xp": 20
+                },
+                {
+                    "name": "Ma",
+                    "xp": 10
+                },
+                {
+                    "name": "PB",
+                    "xp": 20
+                },
+                {
+                    "name": "PS",
+                    "xp": 20
+                },
+                {
+                    "name": "Sc",
+                    "xp": 20
+                }
+            ]
+        }
+    }
+}
