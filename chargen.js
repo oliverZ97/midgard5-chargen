@@ -3,6 +3,7 @@ const fs = require("fs");
 var character = {};
 
 function startgen() {
+  console.clear()
   chooseGender();
 }
 
@@ -53,8 +54,8 @@ function chooseGender() {
 
       rl.question(
         "So your character will be " +
-          gender +
-          ". Is that correct? If not please correct your Answer here, else press just enter. ",
+        gender +
+        ". Is that correct? If not please correct your Answer here, else press just enter. ",
         (answer) => {
           if (answer !== "") {
             gender = answer;
@@ -393,8 +394,8 @@ function setSkills(rl, counter) {
   console.log("-------------------------");
   rl.question(
     "Are you okay with that? Type r to repeat. You can repeat " +
-      c +
-      " time/s ",
+    c +
+    " time/s ",
     (answer) => {
       if (answer === "r" && c !== 0) {
         c--;
@@ -730,9 +731,9 @@ function calculateBoni(rl) {
       b =
         Math.floor(
           Math.random() * 3 +
-            1 +
-            (Math.random() * 3 + 1) +
-            (Math.random() * 3 + 1)
+          1 +
+          (Math.random() * 3 + 1) +
+          (Math.random() * 3 + 1)
         ) + 12;
       break;
     case "Halfling":
@@ -745,10 +746,10 @@ function calculateBoni(rl) {
       b =
         Math.floor(
           Math.random() * 3 +
-            1 +
-            (Math.random() * 3 + 1) +
-            (Math.random() * 3 + 1) +
-            (Math.random() * 3 + 1)
+          1 +
+          (Math.random() * 3 + 1) +
+          (Math.random() * 3 + 1) +
+          (Math.random() * 3 + 1)
         ) + 16;
   }
   anb = calcBonusValue(character.gs);
@@ -912,10 +913,10 @@ function specialAbility(rl) {
     if (answer === "y" || answer === "yes") {
       specialAbilityChooser(spAbil);
       setXPSum();
-      sumUpInformations(rl);
+      abilityManager(rl);
     } else {
       setXPSum();
-      sumUpInformations(rl);
+      abilityManager(rl);
     }
   });
 }
@@ -947,17 +948,6 @@ function specialAbilityChooser(spAbil) {
 }
 
 function setXPSum() {
-  console.log(
-    "**********************************************************************************************************************"
-  );
-  console.log(
-    "Now the other abilities of your character can be choosed. It needs a little bit of knowledge about, how the learning of abbilities in Midgard works."
-  );
-  console.log(
-    "First of all, you need Experience(XP) and Gold(GS) to learn and upgrade abilities. \nDepending on what class your character has it is easier or more difficult for him or her to learn some abilities. \nIf your character would like to learn a completly new ability, it costs Learning Units(LE). To upgrade a known ability it costs Training Units(TE)."
-  );
-  console.log("")
-
   let rank = character.rank;
   let xpSum = 0;
   if (rank === 2) {
@@ -984,7 +974,68 @@ function setXPSum() {
     xpSum = base + 5000 * multiplier;
   }
   character.xpSum = xpSum;
-  console.log(character.xpSum);
+}
+
+function abilityManager(rl) {
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  console.log(
+    "Now the other abilities of your character can be choosen. \nIt needs a little bit of knowledge about, how the learning of abilities in Midgard works."
+  );
+  console.log(
+    "First of all, you need Experience(XP) and Gold(GS) to learn and upgrade abilities. \nDepending on what class your character has it is easier or more difficult for him or her to learn some abilities. \nIf your character would like to learn a completly new ability, it costs Learning Units(LE). \nTo upgrade a known ability it costs Training Units(TE)."
+  );
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  let costs = JSON.parse(fs.readFileSync("./lib/xpCosts_Classes.json"));
+  let classes = JSON.parse(fs.readFileSync("./lib/class_abilities.json"));
+  let char_class = classes[character.class];
+  console.log("At the beginning of every characters life he doesn`t know many Abilities. \nTherefore he has some LE for ability groups which suits best to his character class. \nThese LE should be used to learn some abilities your character should know at the beginning. \nThis doesn`t cost any XP or GS")
+  console.log(
+    "Your character is a " +
+    character.class
+  );
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  char_class.le.map((elem) => {
+    console.log(elem.name + ": " + elem.units + " LE")
+  })
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  console.log("In addition to the LE your character knows one or two abilities which are typical for your characters class.")
+  console.log("Your " + character.class + " can choose " + char_class.number_abilities + " abilities.")
+  console.log("You can choose out of the following list: ")
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  char_class.typ_abil.map((elem) => {
+    console.log(elem.name + "(" + elem.property + "): +" + elem.base) 
+  })
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  console.log("Your Experience Points: ", character.xpSum);
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  console.log("In the following table you can see the costs for the different ability groups:")
+  let groups = Object.values(Object.values(costs)[0]);
+  groups.map((elem) => {
+    let costs = elem.xp_costs
+    costs.map((item) => {
+      if (item.name === character.class) {
+        console.log(elem.lang_en + ": " + item.xp + " XP")
+      }
+    })
+  })
+  console.log(
+    "**********************************************************************************************************************"
+  );
+  sumUpInformations(rl);
 }
 
 function sumUpInformations(rl) {

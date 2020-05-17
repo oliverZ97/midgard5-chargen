@@ -2,6 +2,7 @@
     "ability_groups": {
         "everyday": {
             "lang_de": "Alltag",
+            "lang_en": "Everyday",
             "xp_costs": [
                 {
                     "name": "As",
@@ -67,6 +68,7 @@
         },
         "outdoor": {
             "lang_de": "Freiland",
+            "lang_en": "Outdoor",
             "xp_costs": [
                 {
                     "name": "As",
@@ -132,6 +134,7 @@
         },
         "halfworld": {
             "lang_de": "Halbwelt",
+            "lang_en": "Halfworld",
             "xp_costs": [
                 {
                     "name": "As",
@@ -197,6 +200,7 @@
         },
         "fight": {
             "lang_de": "Kampf",
+            "lang_en": "Fight",
             "xp_costs": [
                 {
                     "name": "As",
@@ -262,6 +266,7 @@
         },
         "body": {
             "lang_de": "Körper",
+            "lang_en": "Body",
             "xp_costs": [
                 {
                     "name": "As",
@@ -327,6 +332,7 @@
         },
         "social": {
             "lang_de": "Sozial",
+            "lang_en": "Social",
             "xp_costs": [
                 {
                     "name": "As",
@@ -392,6 +398,7 @@
         },
         "underworld": {
             "lang_de": "Unterwelt",
+            "lang_en": "Underworld",
             "xp_costs": [
                 {
                     "name": "As",
@@ -457,6 +464,7 @@
         },
         "weapon": {
             "lang_de": "Waffen",
+            "lang_en": "Weapon",
             "xp_costs": [
                 {
                     "name": "As",
@@ -522,6 +530,7 @@
         },
         "knowledge": {
             "lang_de": "Wissen",
+            "lang_en": "Knowledge",
             "xp_costs": [
                 {
                     "name": "As",

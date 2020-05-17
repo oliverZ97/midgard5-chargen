@@ -1,0 +1,238 @@
+{
+    "As": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 1},
+            {"name": "Halfworld", "units": 2},
+            {"name": "Social", "units": 4},
+            {"name": "Underworld", "units": 8},
+            {"name": "Weapon", "units": 24}
+        ],
+        "typ_abil": [
+            {"name": "Meucheln", "base": 8, "property": "Gs"}
+        ],
+        "number_abilities": 1
+    },
+    "Bb": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Outdoor", "units": 4},
+            {"name": "Fight", "units": 1},
+            {"name": "Body", "units": 2},
+            {"name": "Weapon", "units": 24}
+        ],
+        "typ_abil": [
+            {"name": "Spurensuche", "base": 8, "property": "In"},
+            {"name": "Überleben", "base": 8, "property": "In"}
+        ],
+        "number_abilities": 2
+    },
+    "Gl": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Halfworld", "units": 3},
+            {"name": "Social", "units": 8},
+            {"name": "Weapon", "units": 24}
+        ],
+        "typ_abil": [
+            {"name": "Fechten", "base": 5, "property": "Gs"},
+            {"name": "beidhändiger Kampf", "base": 5, "property": "Gs"}
+        ],
+        "number_abilities": 1
+    },
+    "Hä": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 4},
+            {"name": "Knowledge", "units": 4},
+            {"name": "Social", "units": 8},
+            {"name": "Weapon", "units": 20}
+        ],
+        "typ_abil": [
+            {"name": "Geschäftssinn", "base": 8, "property": "In"}
+        ],
+        "number_abilities": 1
+    },
+    "Kr": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Fight", "units": 3},
+            {"name": "Body", "units": 1},
+            {"name": "Weapon", "units": 36}
+        ],
+        "typ_abil": [
+            {"name": "Kampf in Vollrüstung", "base": 5, "property": "St"}
+        ],
+        "number_abilities": 1
+    },
+    "Sp": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Halfworld", "units": 6},
+            {"name": "Underworld", "units": 12},
+            {"name": "Weapon", "units": 20}
+        ],
+        "typ_abil": [
+            {"name": "Fallenmechanik", "base": 8, "property": "Gs"},
+            {"name": "Geschäftssinn", "base": 8, "property": "In"}
+        ],
+        "number_abilities": 1
+    },
+    "Wa": {
+        "class_type": "Warrior",
+        "le": [
+            {"name": "Everyday", "units": 1},
+            {"name": "Outdoor", "units": 11},
+            {"name": "Body", "units": 4},
+            {"name": "Weapon", "units": 20}
+        ],
+        "typ_abil": [
+            {"name": "Scharfschießen", "base": 5, "property": "Gs"}
+        ],
+        "number_abilities": 1
+    },
+    "Ba": {
+        "class-type": "WarWiz",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Social", "units": 4},
+            {"name": "Knowledge", "units": 4},
+            {"name": "Weapon", "units": 16},
+            {"name": "Magic", "units": 3, "type": ["Zauberlieder"]}
+        ],
+        "typ_abil": [
+            {"name": "Musizieren", "base": 12, "property": "Gs"},
+            {"name": "Landeskunde", "base": 8, "property": "In"}
+        ],
+        "number_abilities": 2
+    },
+    "Or": {
+        "class_type": "WarWiz",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Fight", "units": 3},
+            {"name": "Knowledge", "units": 2},
+            {"name": "Weapon", "units": 18},
+            {"name": "Magic", "units": 3, "type": ["Wundertaten"]}
+        ],
+        "typ_abil": [
+            {"name": "Athletik", "base": 8, "property": "St"},
+            {"name": "Meditieren", "base": 8, "property": "Wk"}
+        ],
+        "number_abilities": 1
+    },
+    "Dr": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Outdoor", "units": 4},
+            {"name": "Knowledge", "units": 2},
+            {"name": "Weapon", "units": 6},
+            {"name": "Magic", "units": 5, "type": ["Dweomer"]}
+        ],
+        "typ_abil": [
+            {"name": "Pflanzenkunde", "base": 8, "property": "In"},
+            {"name": "Schreiben", "base": 12, "property": "In"}
+        ],
+        "typ_spel": [
+            {"name": "Tiere rufen"}
+        ],
+        "number_abilities": 2
+    },
+    "Hx": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 3},
+            {"name": "Social", "units": 2},
+            {"name": "Knowledge", "units": 2},
+            {"name": "Weapon", "units": 2},
+        {"name": "Magic", "units": 6, "type": ["Beherrschen", "Verändern"]}
+        ],
+        "typ_abil": [
+            {"name": "Gassenwissen", "base": 8, "property": "In"},
+            {"name": "Verführen", "base": 8, "property": "pA"}
+        ],
+        "typ_spel": [
+            {"name": "Verwünschen"},
+            {"name": "Binden des Vertauten"}
+        ],
+        "number_abilities": 1
+    },
+    "Ma": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 1},
+            {"name": "Knowledge", "units": 5},
+            {"name": "Weapon", "units": 2},
+            {"name": "Magic", "units": 7, "type": ["Beherrschen", "Bewegen", "Erkennen", "Erschaffen", "Formen", "Verändern", "Zerstören"]}
+        ],
+        "typ_abil": [
+            {"name": "Zauberkunde", "base": 8, "property": "In"},
+            {"name": "Schreiben", "base": 12, "property": "In"}
+        ],
+        "typ_spel": [
+            {"name": "Erkennen von Zauberei"}
+        ],
+        "number_abilities": 2
+    },
+    "PB": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Social", "units": 2},
+            {"name": "Knowledge", "units": 3},
+            {"name": "Weapon", "units": 6},
+            {"name": "Magic", "units": 5, "type": ["Wundertaten"]}
+        ],
+        "typ_abil": [
+            {"name": "Menschenkenntnis", "base": 8, "property": "In"},
+            {"name": "Schreiben", "base": 12, "property": "In"}
+        ],
+        "typ_spel": [
+            {"name": "Heilen von Wunden"}
+        ],
+        "number_abilities": 1
+    },
+    "PS": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 3},
+            {"name": "Social", "units": 2},
+            {"name": "Knowledge", "units": 2},
+            {"name": "Weapon", "units": 8},
+            {"name": "Magic", "units": 5, "type": ["Wundertaten"]}
+        ],
+        "typ_abil": [
+            {"name": "Erste Hilfe", "base": 8, "property": "Gs"},
+            {"name": "Schreiben", "base": 12, "property": "In"}
+        ],
+        "typ_spel": [
+            {"name": "Bannen von Finsterwerk"},
+            {"name": "Strahlender Panzer"}
+        ],
+        "number_abilities": 1
+    },
+    "Sc": {
+        "class_type": "Wizard",
+        "le": [
+            {"name": "Everyday", "units": 2},
+            {"name": "Body", "units": 4},
+            {"name": "Knowledge", "units": 2},
+            {"name": "Weapon", "units": 6},
+            {"name": "Magic", "units": 5, "type": ["Dweomer", "Wundertaten"]}
+        ],
+        "typ_abil": [
+            {"name": "Tierkunde", "base": 8, "property": "In"},
+            {"name": "Überleben", "base": 8, "property": "In"}
+        ],
+        "typ_spel": [
+            {"name": "Austreibung des Bösen"},
+            {"name": "Bannen von Gift"}
+        ],
+        "number_abilities": 1
+    }
+}
