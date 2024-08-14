@@ -1,9 +1,9 @@
 const readline = require("readline");
 const fs = require("fs");
-var character = {};
+const character = {};
 
 function startgen() {
-  console.clear()
+  console.clear();
   chooseGender();
 }
 
@@ -54,8 +54,8 @@ function chooseGender() {
 
       rl.question(
         "So your character will be " +
-        gender +
-        ". Is that correct? If not please correct your Answer here, else press just enter. ",
+          gender +
+          ". Is that correct? If not please correct your Answer here, else press just enter. ",
         (answer) => {
           if (answer !== "") {
             gender = answer;
@@ -113,7 +113,7 @@ function setCharacteristics(rl) {
     "Please choose the height of the character. Type the value in cm. ",
     (answer) => {
       switch (character.race) {
-        case "human":
+        case "Human":
           if (answer === "") {
             height = Math.round(Math.random() * 60 + 150);
           } else {
@@ -126,7 +126,7 @@ function setCharacteristics(rl) {
             }
           }
           break;
-        case "elf":
+        case "Elf":
           if (answer === "") {
             height = Math.round(Math.random() * 50 + 165);
           } else {
@@ -139,7 +139,7 @@ function setCharacteristics(rl) {
             }
           }
           break;
-        case "dwarf":
+        case "Dwarf":
           if (answer === "") {
             height = Math.round(Math.random() * 15 + 132);
           } else {
@@ -152,7 +152,7 @@ function setCharacteristics(rl) {
             }
           }
           break;
-        case "halfling":
+        case "Halfling":
           if (answer === "") {
             height = Math.round(Math.random() * 20 + 103);
           } else {
@@ -165,7 +165,7 @@ function setCharacteristics(rl) {
             }
           }
           break;
-        case "gnome":
+        case "Gnome":
           if (answer === "") {
             height = Math.round(Math.random() * 15 + 92);
           } else {
@@ -177,6 +177,19 @@ function setCharacteristics(rl) {
               height = answer;
             }
           }
+        default:
+          if (answer === "") {
+            height = Math.round(Math.random() * 60 + 150);
+          } else {
+            if (answer < 150) {
+              height = 150;
+            } else if (answer > 210) {
+              height = 210;
+            } else {
+              height = answer;
+            }
+          }
+          break;
       }
 
       character.height = height;
@@ -185,7 +198,7 @@ function setCharacteristics(rl) {
       rl.question(
         "Now choose the stature of your character. You can choose between slim, normal and if not an elf - wide. ",
         (answer) => {
-          if (character.race === "elf") {
+          if (character.race === "Elf") {
             if (answer === "") {
               let rdm = Math.round(Math.random() * 2);
               switch (rdm) {
@@ -234,19 +247,19 @@ function setCharacteristics(rl) {
               } else {
                 age = answer;
               }
-              if (character.race === "elf") {
+              if (character.race === "Elf") {
                 age = age * 5;
               }
-              if (character.race === "dwarf") {
+              if (character.race === "Dwarf") {
                 age = age * 2;
               }
-              if (character.race === "gnome") {
+              if (character.race === "Gnome") {
                 age = age * 4;
               }
               character.age = age;
               console.log(`Your character's age is ${age}.`);
               let rdm = Math.round(Math.random() * 100 + 1);
-              if (character.race === "gnome") {
+              if (character.race === "Gnome") {
                 whand = "B";
               } else {
                 if (rdm <= 75) {
@@ -275,28 +288,31 @@ function setCharacteristics(rl) {
 function chooseRace(rl) {
   let race = "";
   rl.question(
-    "You can decide which Race your character should have. Your character could be a human, an elf, a dwarf, a halfling or a gnome. ",
+    "You can decide which Race your character should have. There are several species in the world of Midgard. Your character could be a human, an elf, a dwarf, a halfling a gnome or a mupigwi. Mupigwi are a subspecies from the Catpeople living in the north of Lamaran. ",
     (answer) => {
       if (answer === "") {
         let rdm = Math.round(Math.random() * 5);
         switch (rdm) {
           case 1:
-            race = "human";
+            race = "Human";
             break;
           case 2:
-            race = "elf";
+            race = "Elf";
             break;
           case 3:
-            race = "dwarf";
+            race = "Dwarf";
             break;
           case 4:
-            race = "halfling";
+            race = "Halfling";
             break;
           case 5:
-            race = "gnome";
+            race = "Gnome";
+            break;
+          case 6:
+            race = "Mupigwi";
             break;
           default:
-            race = "human";
+            race = "Human";
         }
       } else {
         race = answer;
@@ -344,7 +360,7 @@ function setSkills(rl, counter) {
         zt = 51;
       }
       break;
-    case "dwarf":
+    case "Dwarf":
       if (st < 61) {
         st = 61;
       }
@@ -355,7 +371,7 @@ function setSkills(rl, counter) {
         gw = 80;
       }
       break;
-    case "halfling":
+    case "Halfling":
       if (st > 80) {
         st = 80;
       }
@@ -369,7 +385,7 @@ function setSkills(rl, counter) {
         ko = 41;
       }
       break;
-    case "gnome":
+    case "Gnome":
       if (st > 60) {
         st = 60;
       }
@@ -383,6 +399,17 @@ function setSkills(rl, counter) {
         ko = 51;
       }
       break;
+    case "Mupigwi":
+      if (gw < 70) {
+        gw = 70;
+      }
+      if (zt > 30) {
+        zt = 30;
+      }
+      if (st > 80) {
+        st = 80;
+      }
+      break;
   }
   console.log("-------------------------");
   console.log("STRENGTH: ", st);
@@ -394,8 +421,8 @@ function setSkills(rl, counter) {
   console.log("-------------------------");
   rl.question(
     "Are you okay with that? Type r to repeat. You can repeat " +
-    c +
-    " time/s ",
+      c +
+      " time/s ",
     (answer) => {
       if (answer === "r" && c !== 0) {
         c--;
@@ -427,19 +454,27 @@ function setMoreSkills(rl) {
     Math.random() * 100 + 1 + 2 * (character.ko / 10 + character.wi / 10) - 20
   );
   switch (character.race) {
-    case "elf":
+    case "Elf":
       if (au < 81) {
         au = 81;
       }
       break;
-    case "dwarf":
+    case "Dwarf":
       if (au > 80) {
         au = 80;
       }
       break;
-    case "gnome":
+    case "Gnome":
       if (au > 80) {
         au = 80;
+      }
+      break;
+    case "Mupigwi":
+      if (au < 70) {
+        au = 70;
+      }
+      if (pa < 70) {
+        pa = 70;
       }
       break;
   }
@@ -478,28 +513,34 @@ function chooseClass(rl) {
     `Your character is a ${character.race}. Depending on your race the choice of your class is limited. \nOnly as a human you are allowed to choose every class.`
   );
   switch (character.race) {
-    case "elf":
+    case "Elf":
       console.log("Please choose between the following classes: ");
       console.log("-------------------------");
       console.log("Gl, Kr, Wa, Ba, Dr, Hx, Ma");
       console.log("-------------------------");
       break;
-    case "dwarf":
+    case "Dwarf":
       console.log("Please choose between the following classes: ");
       console.log("-------------------------");
       console.log("Hä, Kr, Ma, PB, PS");
       console.log("-------------------------");
       break;
-    case "halfling":
+    case "Halfling":
       console.log("Please choose between the following classes: ");
       console.log("-------------------------");
       console.log("As, Hä, Sp, Wa, Ba, PB");
       console.log("-------------------------");
       break;
-    case "gnome":
+    case "Gnome":
       console.log("Please choose between the following classes: ");
       console.log("-------------------------");
       console.log("As, Gl, Sp, Wa, Dr, Hx, Ma");
+      console.log("-------------------------");
+      break;
+    case "Mupigwi":
+      console.log("Please choose between the following classes: ");
+      console.log("-------------------------");
+      console.log("As, Gl, Ha, Sp, Wa, Ba, Dr, Tm");
       console.log("-------------------------");
       break;
   }
@@ -524,27 +565,26 @@ function chooseClass(rl) {
       }
     } else {
       switch (character.race) {
-        case "human":
+        case "Human":
           adClass = "Kr";
-          clType = "Warrior";
           break;
-        case "elf":
+        case "Elf":
           adClass = "Kr";
-          clType = "Warrior";
           break;
-        case "dwarf":
+        case "Dwarf":
           adClass = "Kr";
-          clType = "Warrior";
           break;
-        case "halfling":
+        case "Halfling":
           adClass = "Hä";
-          clType = "Warrior";
           break;
-        case "gnome":
+        case "Gnome":
           adClass = "As";
-          clType = "Warrior";
+          break;
+        case "Mupigwi":
+          adClass = "Wa";
           break;
       }
+      clType = "Warrior";
     }
     console.log(`You choose ${adClass} to be your characters class.`);
     character.class = adClass;
@@ -664,6 +704,10 @@ function calculateLPAP(rl) {
     case "Gnome":
       lp = lp - 3;
       break;
+    case "Mupigwi":
+      ap = ap + 2;
+      lp = lp - 1;
+      break;
   }
   if (
     character.class === "Bb" ||
@@ -731,9 +775,9 @@ function calculateBoni(rl) {
       b =
         Math.floor(
           Math.random() * 3 +
-          1 +
-          (Math.random() * 3 + 1) +
-          (Math.random() * 3 + 1)
+            1 +
+            (Math.random() * 3 + 1) +
+            (Math.random() * 3 + 1)
         ) + 12;
       break;
     case "Halfling":
@@ -742,14 +786,24 @@ function calculateBoni(rl) {
     case "Gnome":
       b = Math.floor(Math.random() * 3 + 1 + (Math.random() * 3 + 1)) + 8;
       break;
+    case "Mupigwi":
+      b =
+        Math.floor(
+          Math.random() * 3 +
+            1 +
+            (Math.random() * 3 + 1) +
+            (Math.random() * 3 + 1) +
+            (Math.random() * 3 + 1)
+        ) + 20;
+      break;
     default:
       b =
         Math.floor(
           Math.random() * 3 +
-          1 +
-          (Math.random() * 3 + 1) +
-          (Math.random() * 3 + 1) +
-          (Math.random() * 3 + 1)
+            1 +
+            (Math.random() * 3 + 1) +
+            (Math.random() * 3 + 1) +
+            (Math.random() * 3 + 1)
         ) + 16;
   }
   anb = calcBonusValue(character.gs);
@@ -803,6 +857,10 @@ function calcResB(rl) {
         g = 4;
         k = 4;
         break;
+      case "Mupigwi":
+        g = g - 1;
+        k = k + 3;
+        break;
     }
   }
   if (character.clType === "Wizard") {
@@ -824,6 +882,11 @@ function chooseAbilities(rl) {
   }
   let drinking = Math.floor(character.ko / 10);
   let recognition = 6;
+  if (character.race === "Mupigwi") {
+    bashing = bashing + 1;
+    drinking = drinking + 2;
+    recognition = 8;
+  }
   character.bashing = bashing;
   character.drinking = drinking;
   character.recognition = recognition;
@@ -841,34 +904,35 @@ function chooseAbilities(rl) {
   console.log(
     "**********************************************************************************************************************"
   );
-  specialAbility(rl);
-}
-
-function specialAbility(rl) {
   console.log(
     "You have the possibility to have a random special ability. \nBut it could be a bad one too, dont worry only with a chance of 15%"
   );
   console.log(
-    "Every race except the human already got some special abilities and can get a extra one here."
+    "Every race except the human already got some special abilities and can get a extra one here. A exception are the Mupigwi. Because they have a lot of special abilities out of the box, the gods don't bless them with more."
   );
   console.log("Elf:       night vision +2");
   console.log("Dwarf:     night vision +2     toughness +9");
   console.log("Halfling:  good reflexes +9    smell +2");
-  console.log(
-    "Gnome:     night vision +2     toughness +12       listening +2"
+  console.log("Gnome:     night vision +2     toughness +12       listening +2"
+  );
+  console.log("Mupigwi:   night vision +2     smell +2            listening +2   good reflexes +9    sixth sense +2"
   );
   console.log(
     "**********************************************************************************************************************"
   );
+  specialAbility(rl);
+}
+
+function specialAbility(rl) {
   let spAbil = [];
   switch (character.race) {
-    case "elf":
+    case "Elf":
       spAbil.push({
         name: "night vision",
         value: 2,
       });
       break;
-    case "dwarf":
+    case "Dwarf":
       spAbil.push(
         {
           name: "night vision",
@@ -880,7 +944,7 @@ function specialAbility(rl) {
         }
       );
       break;
-    case "halfling":
+    case "Halfling":
       spAbil.push(
         {
           name: "good reflexes",
@@ -892,7 +956,7 @@ function specialAbility(rl) {
         }
       );
       break;
-    case "gnome":
+    case "Gnome":
       spAbil.push(
         {
           name: "night vision",
@@ -908,17 +972,48 @@ function specialAbility(rl) {
         }
       );
       break;
+    case "Mupigwi":
+      spAbil.push(
+        {
+          name: "night vision",
+          value: 2,
+        },
+        {
+          name: "hear",
+          value: 2,
+        },
+        {
+          name: "listening",
+          value: 2,
+        },
+        {
+          name: "good reflexes",
+          value: 9,
+        },
+        {
+          name: "sixth sense",
+          value: 2,
+        }
+      );
+      break;
   }
-  rl.question("Should your character get a special ability? ", (answer) => {
-    if (answer === "y" || answer === "yes") {
-      specialAbilityChooser(spAbil);
-      setXPSum();
-      abilityManager(rl);
-    } else {
-      setXPSum();
-      abilityManager(rl);
-    }
-  });
+  if (character.race !== "Mupigwi") {
+    rl.question("Should your character get a special ability? ", (answer) => {
+      if (answer === "y" || answer === "yes") {
+        specialAbilityChooser(spAbil);
+        setXPSum();
+        abilityManager(rl);
+      } else {
+        character.spAbil = spAbil
+        setXPSum();
+        abilityManager(rl);
+      }
+    });
+  } else {
+    character.spAbil = spAbil
+    setXPSum();
+    abilityManager(rl);
+  }
 }
 
 function specialAbilityChooser(spAbil) {
@@ -992,29 +1087,36 @@ function abilityManager(rl) {
   let costs = JSON.parse(fs.readFileSync("./lib/xpCosts_Classes.json"));
   let classes = JSON.parse(fs.readFileSync("./lib/class_abilities.json"));
   let char_class = classes[character.class];
-  console.log("At the beginning of every characters life he doesn`t know many Abilities. \nTherefore he has some LE for ability groups which suits best to his character class. \nThese LE should be used to learn some abilities your character should know at the beginning. \nThis doesn`t cost any XP or GS")
   console.log(
-    "Your character is a " +
-    character.class
+    "At the beginning of every characters life he doesn`t know many Abilities. \nTherefore he has some LE for ability groups which suits best to his character class. \nThese LE should be used to learn some abilities your character should know at the beginning. \nThis doesn`t cost any XP or GS"
   );
+  console.log("Your character is a " + character.class);
   console.log(
     "**********************************************************************************************************************"
   );
   char_class.le.map((elem) => {
-    console.log(elem.name + ": " + elem.units + " LE")
-  })
+    console.log(elem.name + ": " + elem.units + " LE");
+  });
   console.log(
     "**********************************************************************************************************************"
   );
-  console.log("In addition to the LE your character knows one or two abilities which are typical for your characters class.")
-  console.log("Your " + character.class + " can choose " + char_class.number_abilities + " abilities.")
-  console.log("You can choose out of the following list: ")
+  console.log(
+    "In addition to the LE your character knows one or two abilities which are typical for your characters class."
+  );
+  console.log(
+    "Your " +
+      character.class +
+      " can choose " +
+      char_class.number_abilities +
+      " abilities."
+  );
+  console.log("You can choose out of the following list: ");
   console.log(
     "**********************************************************************************************************************"
   );
   char_class.typ_abil.map((elem) => {
-    console.log(elem.name + "(" + elem.property + "): +" + elem.base) 
-  })
+    console.log(elem.name + "(" + elem.property + "): +" + elem.base);
+  });
   console.log(
     "**********************************************************************************************************************"
   );
@@ -1022,16 +1124,18 @@ function abilityManager(rl) {
   console.log(
     "**********************************************************************************************************************"
   );
-  console.log("In the following table you can see the costs for the different ability groups:")
+  console.log(
+    "In the following table you can see the costs for the different ability groups:"
+  );
   let groups = Object.values(Object.values(costs)[0]);
   groups.map((elem) => {
-    let costs = elem.xp_costs
+    let costs = elem.xp_costs;
     costs.map((item) => {
       if (item.name === character.class) {
-        console.log(elem.lang_en + ": " + item.xp + " XP")
+        console.log(elem.lang_en + ": " + item.xp + " XP");
       }
-    })
-  })
+    });
+  });
   console.log(
     "**********************************************************************************************************************"
   );
@@ -1074,9 +1178,11 @@ function sumUpInformations(rl) {
 function formatSpecialAbilities() {
   let arr = character.spAbil;
   let str = "";
-  arr.forEach((elem) => {
-    str += "(" + elem.name + ": " + elem.value + ") |\t";
-  });
+  if (arr.length > 0) {
+    arr.forEach((elem) => {
+      str += "(" + elem.name + ": " + elem.value + ") |\t";
+    });
+  }
   return str;
 }
 
