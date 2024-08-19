@@ -1,0 +1,64 @@
+{
+  "elf": [
+    {
+      "name": "night vision",
+      "value": 2
+    }
+  ],
+  "dwarf": [
+    {
+      "name": "night vision",
+      "value": 2
+    },
+    {
+      "name": "toughness",
+      "value": 9
+    }
+  ],
+  "halfling": [
+    {
+      "name": "good reflexes",
+      "value": 9
+    },
+    {
+      "name": "smell",
+      "value": 2
+    }
+  ],
+  "gnome": [
+    {
+      "name": "night vision",
+      "value": 2
+    },
+    {
+      "name": "toughness",
+      "value": 12
+    },
+    {
+      "name": "listening",
+      "value": 2
+    }
+  ],
+  "mupigwi": [
+    {
+      "name": "night vision",
+      "value": 2
+    },
+    {
+      "name": "hear",
+      "value": 2
+    },
+    {
+      "name": "listening",
+      "value": 2
+    },
+    {
+      "name": "good reflexes",
+      "value": 9
+    },
+    {
+      "name": "sixth sense",
+      "value": 2
+    }
+  ]
+}

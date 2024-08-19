@@ -2,6 +2,9 @@ const readline = require("readline");
 const fs = require("fs");
 const character = {};
 
+const DIVIDER =
+  "**********************************************************************************************************************";
+
 function startgen() {
   console.clear();
   chooseGender();
@@ -28,16 +31,12 @@ function chooseGender() {
     "\\________| |__|   |__| |__|    |__| |__| \\__\\  \\_______/ |________| |_|   \\___|      ||  __/________\\__"
   );
 
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log("Created by Oliver Ziemann | 2020 | Version 1.0.2");
   console.log(
     "This tool is used to create a Character based on the Rules of MIDGARD 5. "
   );
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -62,9 +61,7 @@ function chooseGender() {
           }
           character.gender = gender;
           console.log(`So your character is ${gender}.`);
-          console.log(
-            "**********************************************************************************************************************"
-          );
+          console.log(DIVIDER);
           chooseName(rl);
         }
       );
@@ -92,9 +89,7 @@ function chooseName(rl) {
           );
         }
         character.name = name;
-        console.log(
-          "**********************************************************************************************************************"
-        );
+        console.log(DIVIDER);
         chooseRace(rl);
       });
     }
@@ -198,38 +193,18 @@ function setCharacteristics(rl) {
       rl.question(
         "Now choose the stature of your character. You can choose between slim, normal and if not an elf - wide. ",
         (answer) => {
+          const statures = ["slim", "normal", "wide"];
           if (character.race === "Elf") {
             if (answer === "") {
               let rdm = Math.round(Math.random() * 2);
-              switch (rdm) {
-                case 1:
-                  stature = "slim";
-                  break;
-                case 2:
-                  stature = "normal";
-                  break;
-                default:
-                  stature = "slim";
-              }
+              stature = statures[rdm];
             } else {
               stature = answer;
             }
           } else {
             if (answer === "") {
               let rdm = Math.round(Math.random() * 3);
-              switch (rdm) {
-                case 1:
-                  stature = "slim";
-                  break;
-                case 2:
-                  stature = "normal";
-                  break;
-                case 3:
-                  stature = "wide";
-                  break;
-                default:
-                  stature = "normal";
-              }
+              stature = statures[rdm];
             } else {
               stature = answer;
             }
@@ -272,9 +247,7 @@ function setCharacteristics(rl) {
               }
               character.whand = whand;
               console.log(`Your weaponhand is ${character.whand}.`);
-              console.log(
-                "**********************************************************************************************************************"
-              );
+              console.log(DIVIDER);
               let counter = 2;
               setSkills(rl, counter);
             }
@@ -291,37 +264,15 @@ function chooseRace(rl) {
     "You can decide which Race your character should have. There are several species in the world of Midgard. Your character could be a human, an elf, a dwarf, a halfling a gnome or a mupigwi. Mupigwi are a subspecies from the Catpeople living in the north of Lamaran. ",
     (answer) => {
       if (answer === "") {
-        let rdm = Math.round(Math.random() * 5);
-        switch (rdm) {
-          case 1:
-            race = "Human";
-            break;
-          case 2:
-            race = "Elf";
-            break;
-          case 3:
-            race = "Dwarf";
-            break;
-          case 4:
-            race = "Halfling";
-            break;
-          case 5:
-            race = "Gnome";
-            break;
-          case 6:
-            race = "Mupigwi";
-            break;
-          default:
-            race = "Human";
-        }
+        let races = ["Human", "Elf", "Dwarf", "Halfling", "Gnome", "Mupigwi"];
+        let rdm = Math.round(Math.random() * races.length);
+        race = races[rdm];
       } else {
         race = answer;
       }
       character.race = race;
       console.log(`Your character's race is ${race}.`);
-      console.log(
-        "**********************************************************************************************************************"
-      );
+      console.log(DIVIDER);
       setCharacteristics(rl);
     }
   );
@@ -329,12 +280,12 @@ function chooseRace(rl) {
 
 function setSkills(rl, counter) {
   let c = counter;
-  let st = 0;
-  let gs = 0;
-  let gw = 0;
-  let ko = 0;
-  let wi = 0;
-  let zt = 0;
+  let st,
+    gs,
+    gw,
+    ko,
+    wi,
+    zt = 0;
   console.log("In this step the basic skills are setted.");
   st = Math.round(Math.min(Math.random() * 100 + 1, 100));
   gs = Math.round(Math.min(Math.random() * 100 + 1, 100));
@@ -434,9 +385,7 @@ function setSkills(rl, counter) {
         character.ko = ko;
         character.wi = wi;
         character.zt = zt;
-        console.log(
-          "**********************************************************************************************************************"
-        );
+        console.log(DIVIDER);
         setMoreSkills(rl);
       }
     }
@@ -445,9 +394,9 @@ function setSkills(rl, counter) {
 
 function setMoreSkills(rl) {
   console.log("Now some more Properties of the character are placed.");
-  let au = 0;
-  let pa = 0;
-  let wk = 0;
+  let au,
+    pa,
+    wk = 0;
   au = Math.round(Math.random() * 100 + 1);
   pa = Math.round(Math.random() * 100 + 1 + 4 * (character.wi / 10) - 20);
   wk = Math.round(
@@ -486,9 +435,7 @@ function setMoreSkills(rl) {
   character.au = au;
   character.pa = pa;
   character.wk = wk;
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   chooseClass(rl);
 }
 
@@ -589,9 +536,7 @@ function chooseClass(rl) {
     console.log(`You choose ${adClass} to be your characters class.`);
     character.class = adClass;
     character.clType = clType;
-    console.log(
-      "**********************************************************************************************************************"
-    );
+    console.log(DIVIDER);
     setState(rl);
   });
 }
@@ -643,9 +588,7 @@ function setState(rl) {
 
   console.log(`Your character is part of the ${status}`);
   character.status = status;
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   chooseRank(rl);
 }
 
@@ -664,9 +607,7 @@ function chooseRank(rl) {
         console.log(
           `Your (${character.class}) ${character.name} has rank ${character.rank}.`
         );
-        console.log(
-          "**********************************************************************************************************************"
-        );
+        console.log(DIVIDER);
         calculateLPAP(rl);
       } else {
         if (isNaN(answer)) {
@@ -680,9 +621,7 @@ function chooseRank(rl) {
           console.log(
             `Your (${character.class}) ${character.name} has rank ${character.rank}.`
           );
-          console.log(
-            "**********************************************************************************************************************"
-          );
+          console.log(DIVIDER);
           calculateLPAP(rl);
         }
       }
@@ -758,9 +697,7 @@ function calculateLPAP(rl) {
   console.log("Your character has: ");
   console.log(`LIFEPOINTS: ${character.lp}`);
   console.log(`ENDURANCEPOINTS: ${character.ap}`);
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   calculateBoni(rl);
 }
 
@@ -901,9 +838,7 @@ function chooseAbilities(rl) {
   console.log(
     "Unfortunately, it is not possible to choose your abilities as a part of this tool at the moment. \nBut you can easily follow the instructions on page 27 of Midgard - der Kodex. Or simply ask your Game Master."
   );
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log(
     "You have the possibility to have a random special ability. \nBut it could be a bad one too, dont worry only with a chance of 15%"
   );
@@ -913,88 +848,34 @@ function chooseAbilities(rl) {
   console.log("Elf:       night vision +2");
   console.log("Dwarf:     night vision +2     toughness +9");
   console.log("Halfling:  good reflexes +9    smell +2");
-  console.log("Gnome:     night vision +2     toughness +12       listening +2"
-  );
-  console.log("Mupigwi:   night vision +2     smell +2            listening +2   good reflexes +9    sixth sense +2"
+  console.log(
+    "Gnome:     night vision +2     toughness +12       listening +2"
   );
   console.log(
-    "**********************************************************************************************************************"
+    "Mupigwi:   night vision +2     smell +2            listening +2   good reflexes +9    sixth sense +2"
   );
+  console.log(DIVIDER);
   specialAbility(rl);
 }
 
 function specialAbility(rl) {
   let spAbil = [];
+  let abil = JSON.parse(fs.readFileSync("./lib/race_abilities.json"));
   switch (character.race) {
     case "Elf":
-      spAbil.push({
-        name: "night vision",
-        value: 2,
-      });
+      spAbil = spAbil.concat(abil["elf"]);
       break;
     case "Dwarf":
-      spAbil.push(
-        {
-          name: "night vision",
-          value: 2,
-        },
-        {
-          name: "toughness",
-          value: 9,
-        }
-      );
+      spAbil = spAbil.concat(abil["dwarf"]);
       break;
     case "Halfling":
-      spAbil.push(
-        {
-          name: "good reflexes",
-          value: 9,
-        },
-        {
-          name: "smell",
-          value: 2,
-        }
-      );
+      spAbil = spAbil.concat(abil["halfling"]);
       break;
     case "Gnome":
-      spAbil.push(
-        {
-          name: "night vision",
-          value: 2,
-        },
-        {
-          name: "toughness",
-          value: 12,
-        },
-        {
-          name: "listening",
-          value: 2,
-        }
-      );
+      spAbil = spAbil.concat(abil["gnome"]);
       break;
     case "Mupigwi":
-      spAbil.push(
-        {
-          name: "night vision",
-          value: 2,
-        },
-        {
-          name: "hear",
-          value: 2,
-        },
-        {
-          name: "listening",
-          value: 2,
-        },
-        {
-          name: "good reflexes",
-          value: 9,
-        },
-        {
-          name: "sixth sense",
-          value: 2,
-        }
-      );
+      spAbil = spAbil.concat(abil["mupigwi"]);
       break;
   }
   if (character.race !== "Mupigwi") {
@@ -1004,13 +885,13 @@ function specialAbility(rl) {
         setXPSum();
         abilityManager(rl);
       } else {
-        character.spAbil = spAbil
+        character.spAbil = spAbil;
         setXPSum();
         abilityManager(rl);
       }
     });
   } else {
-    character.spAbil = spAbil
+    character.spAbil = spAbil;
     setXPSum();
     abilityManager(rl);
   }
@@ -1072,18 +953,14 @@ function setXPSum() {
 }
 
 function abilityManager(rl) {
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log(
     "Now the other abilities of your character can be choosen. \nIt needs a little bit of knowledge about, how the learning of abilities in Midgard works."
   );
   console.log(
     "First of all, you need Experience(XP) and Gold(GS) to learn and upgrade abilities. \nDepending on what class your character has it is easier or more difficult for him or her to learn some abilities. \nIf your character would like to learn a completly new ability, it costs Learning Units(LE). \nTo upgrade a known ability it costs Training Units(TE)."
   );
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   let costs = JSON.parse(fs.readFileSync("./lib/xpCosts_Classes.json"));
   let classes = JSON.parse(fs.readFileSync("./lib/class_abilities.json"));
   let char_class = classes[character.class];
@@ -1091,15 +968,11 @@ function abilityManager(rl) {
     "At the beginning of every characters life he doesn`t know many Abilities. \nTherefore he has some LE for ability groups which suits best to his character class. \nThese LE should be used to learn some abilities your character should know at the beginning. \nThis doesn`t cost any XP or GS"
   );
   console.log("Your character is a " + character.class);
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   char_class.le.map((elem) => {
     console.log(elem.name + ": " + elem.units + " LE");
   });
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log(
     "In addition to the LE your character knows one or two abilities which are typical for your characters class."
   );
@@ -1111,19 +984,13 @@ function abilityManager(rl) {
       " abilities."
   );
   console.log("You can choose out of the following list: ");
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   char_class.typ_abil.map((elem) => {
     console.log(elem.name + "(" + elem.property + "): +" + elem.base);
   });
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log("Your Experience Points: ", character.xpSum);
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   console.log(
     "In the following table you can see the costs for the different ability groups:"
   );
@@ -1136,16 +1003,12 @@ function abilityManager(rl) {
       }
     });
   });
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   sumUpInformations(rl);
 }
 
 function sumUpInformations(rl) {
-  console.log(
-    "**********************************************************************************************************************"
-  );
+  console.log(DIVIDER);
   rl.question(
     "Do you want to save your character sheet in a file? ",
     (answer) => {
@@ -1159,9 +1022,7 @@ function sumUpInformations(rl) {
             if (answer === "yes" || answer === "y") {
               rl.close();
               character = {};
-              console.log(
-                "**********************************************************************************************************************"
-              );
+              console.log(DIVIDER);
               console.log("\n\n\n");
               startgen();
             } else {
@@ -1180,7 +1041,9 @@ function formatSpecialAbilities() {
   let str = "";
   if (arr.length > 0) {
     arr.forEach((elem) => {
-      str += "(" + elem.name + ": " + elem.value + ") |\t";
+      str += `${elem.name.toUpperCase()}: ${elem.value} ${
+        elem !== arr[arr.length - 1] ? "|" : ""
+      }\t`;
     });
   }
   return str;
@@ -1195,10 +1058,18 @@ function saveSheetInFile() {
 }
 
 function setContentToFile() {
+  const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  };
   let content =
     "***************************************************************************************************************************\n" +
-    "CHARACTERSHEET\n" +
-    "***************************************************************************************************************************\n" +
+    "CHARACTERSHEET                                                                                                   Midgard v5\n" +
+    `************************************************************************************************* created at ${new Date().toLocaleDateString(
+      "de-DE",
+      options
+    )} ***\n` +
     "***************************************************************************************************************************\n" +
     "NAME: " +
     `${character.name}`.padStart(22) +
@@ -1280,7 +1151,6 @@ function setContentToFile() {
     "***************************************************************************************************************************\n" +
     "ABILITIES:\n" +
     "---------------------------------------------------------------------------------------------------------------------------\n" +
-    "---------------------------------------------------------------------------------------------------------------------------\n" +
     "BORN ABILITIES:\n" +
     "BASHING: " +
     `${character.bashing}`.padStart(19) +
@@ -1291,6 +1161,7 @@ function setContentToFile() {
     `${character.recognition}`.padStart(15) +
     "\n" +
     "SPECIAL ABILITIES: " +
+    "\n" +
     `${formatSpecialAbilities()}` +
     "\n" +
     "---------------------------------------------------------------------------------------------------------------------------\n" +
