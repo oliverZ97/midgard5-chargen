@@ -1,0 +1,321 @@
+{
+    "Human": {
+        "name": "Human",
+        "heightRange": {
+            "min": 150,
+            "max": 210,
+            "randomBase": 150,
+            "randomRange": 60
+        },
+        "ageMultiplier": 1,
+        "statLimits": {
+            "st": {
+                "min": 1,
+                "max": 100
+            },
+            "gs": {
+                "min": 1,
+                "max": 100
+            },
+            "gw": {
+                "min": 1,
+                "max": 100
+            },
+            "ko": {
+                "min": 1,
+                "max": 100
+            },
+            "in": {
+                "min": 1,
+                "max": 100
+            },
+            "zt": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "As",
+            "Bb",
+            "Gl",
+            "Hä",
+            "Kr",
+            "Sp",
+            "Wa",
+            "Ba",
+            "Or",
+            "Dr",
+            "Hx",
+            "Ma",
+            "PB",
+            "PS",
+            "Sc"
+        ],
+        "defaultClass": "Kr",
+        "movementWidth": 20,
+        "bornAbilities": {
+            "bashing": 30,
+            "drinking": 30,
+            "recognition": 4
+        }
+    },
+    "Elf": {
+        "name": "Elf",
+        "heightRange": {
+            "min": 165,
+            "max": 215,
+            "randomBase": 165,
+            "randomRange": 50
+        },
+        "ageMultiplier": 5,
+        "statLimits": {
+            "st": {
+                "min": 1,
+                "max": 90
+            },
+            "gs": {
+                "min": 1,
+                "max": 100
+            },
+            "gw": {
+                "min": 81,
+                "max": 100
+            },
+            "ko": {
+                "min": 51,
+                "max": 100
+            },
+            "in": {
+                "min": 51,
+                "max": 100
+            },
+            "zt": {
+                "min": 51,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "Gl",
+            "Kr",
+            "Wa",
+            "Ba",
+            "Dr",
+            "Hx",
+            "Ma"
+        ],
+        "defaultClass": "Kr",
+        "movementWidth": 20,
+        "bornAbilities": {
+            "bashing": 10,
+            "drinking": 10,
+            "recognition": 6
+        }
+    },
+    "Dwarf": {
+        "name": "Dwarf",
+        "heightRange": {
+            "min": 120,
+            "max": 150,
+            "randomBase": 120,
+            "randomRange": 30
+        },
+        "ageMultiplier": 2,
+        "statLimits": {
+            "st": {
+                "min": 61,
+                "max": 100
+            },
+            "gs": {
+                "min": 1,
+                "max": 100
+            },
+            "gw": {
+                "min": 1,
+                "max": 80
+            },
+            "ko": {
+                "min": 61,
+                "max": 100
+            },
+            "in": {
+                "min": 1,
+                "max": 100
+            },
+            "zt": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "Hä",
+            "Kr",
+            "Ma",
+            "PB",
+            "PS"
+        ],
+        "defaultClass": "Kr",
+        "movementWidth": 15,
+        "bornAbilities": {
+            "bashing": 30,
+            "drinking": 40,
+            "recognition": 4
+        }
+    },
+    "Halfling": {
+        "name": "Halfling",
+        "heightRange": {
+            "min": 100,
+            "max": 130,
+            "randomBase": 100,
+            "randomRange": 30
+        },
+        "ageMultiplier": 1,
+        "statLimits": {
+            "st": {
+                "min": 1,
+                "max": 80
+            },
+            "gs": {
+                "min": 51,
+                "max": 100
+            },
+            "gw": {
+                "min": 51,
+                "max": 100
+            },
+            "ko": {
+                "min": 1,
+                "max": 100
+            },
+            "in": {
+                "min": 1,
+                "max": 100
+            },
+            "zt": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "As",
+            "Hä",
+            "Sp",
+            "Wa",
+            "Ba",
+            "PB"
+        ],
+        "defaultClass": "Hä",
+        "movementWidth": 15,
+        "bornAbilities": {
+            "bashing": 20,
+            "drinking": 30,
+            "recognition": 6
+        }
+    },
+    "Gnome": {
+        "name": "Gnome",
+        "heightRange": {
+            "min": 90,
+            "max": 110,
+            "randomBase": 90,
+            "randomRange": 20
+        },
+        "ageMultiplier": 4,
+        "statLimits": {
+            "st": {
+                "min": 1,
+                "max": 60
+            },
+            "gs": {
+                "min": 51,
+                "max": 100
+            },
+            "gw": {
+                "min": 51,
+                "max": 100
+            },
+            "ko": {
+                "min": 1,
+                "max": 100
+            },
+            "in": {
+                "min": 51,
+                "max": 100
+            },
+            "zt": {
+                "min": 61,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "As",
+            "Gl",
+            "Sp",
+            "Wa",
+            "Dr",
+            "Hx",
+            "Ma"
+        ],
+        "defaultClass": "As",
+        "movementWidth": 15,
+        "weaponHand": "B",
+        "bornAbilities": {
+            "bashing": 10,
+            "drinking": 20,
+            "recognition": 8
+        }
+    },
+    "Mupigwi": {
+        "name": "Mupigwi",
+        "heightRange": {
+            "min": 150,
+            "max": 210,
+            "randomBase": 150,
+            "randomRange": 60
+        },
+        "ageMultiplier": 1,
+        "statLimits": {
+            "st": {
+                "min": 1,
+                "max": 100
+            },
+            "gs": {
+                "min": 1,
+                "max": 100
+            },
+            "gw": {
+                "min": 1,
+                "max": 100
+            },
+            "ko": {
+                "min": 1,
+                "max": 100
+            },
+            "in": {
+                "min": 1,
+                "max": 100
+            },
+            "zt": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "allowedClasses": [
+            "As",
+            "Gl",
+            "Hä",
+            "Sp",
+            "Wa",
+            "Ba",
+            "Dr",
+            "Tm"
+        ],
+        "defaultClass": "Wa",
+        "movementWidth": 20,
+        "bornAbilities": {
+            "bashing": 30,
+            "drinking": 30,
+            "recognition": 4
+        }
+    }
+}

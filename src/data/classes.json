@@ -1,0 +1,114 @@
+{
+    "As": {
+        "name": "Assassin",
+        "shortcut": "As",
+        "type": "Warrior",
+        "statusModifier": -10,
+        "description": "A deadly warrior skilled in stealth and assassination"
+    },
+    "Bb": {
+        "name": "Barbarian",
+        "shortcut": "Bb",
+        "type": "Warrior",
+        "statusModifier": 0,
+        "description": "A fierce warrior from the wild lands"
+    },
+    "Gl": {
+        "name": "Knight of Fortune",
+        "shortcut": "Gl",
+        "type": "Warrior",
+        "statusModifier": 0,
+        "description": "An adventurous knight seeking glory and fortune"
+    },
+    "Hä": {
+        "name": "Trader",
+        "shortcut": "Hä",
+        "type": "Warrior",
+        "statusModifier": -10,
+        "description": "A merchant skilled in trade and negotiation"
+    },
+    "Kr": {
+        "name": "Warrior",
+        "shortcut": "Kr",
+        "type": "Warrior",
+        "statusModifier": 0,
+        "description": "A trained fighter skilled in combat"
+    },
+    "Sp": {
+        "name": "Rogue",
+        "shortcut": "Sp",
+        "type": "Warrior",
+        "statusModifier": -20,
+        "description": "A cunning thief and spy"
+    },
+    "Wa": {
+        "name": "Ranger",
+        "shortcut": "Wa",
+        "type": "Warrior",
+        "statusModifier": -10,
+        "description": "A wilderness expert and tracker"
+    },
+    "Ba": {
+        "name": "Bard",
+        "shortcut": "Ba",
+        "type": "maWarrior",
+        "statusModifier": 20,
+        "description": "A magical warrior who uses music and magic"
+    },
+    "Or": {
+        "name": "Warrior of Order",
+        "shortcut": "Or",
+        "type": "maWarrior",
+        "statusModifier": 0,
+        "description": "A holy warrior fighting for order and justice"
+    },
+    "Dr": {
+        "name": "Druid",
+        "shortcut": "Dr",
+        "type": "Wizard",
+        "statusModifier": 10,
+        "description": "A nature priest with powerful magic"
+    },
+    "Hx": {
+        "name": "Warlock",
+        "shortcut": "Hx",
+        "type": "Wizard",
+        "statusModifier": 0,
+        "description": "A dark magic user with forbidden powers"
+    },
+    "Ma": {
+        "name": "Magician",
+        "shortcut": "Ma",
+        "type": "Wizard",
+        "statusModifier": 10,
+        "description": "A scholar of arcane magic"
+    },
+    "PB": {
+        "name": "Priest",
+        "shortcut": "PB",
+        "type": "Wizard",
+        "statusModifier": 20,
+        "description": "A holy priest serving the gods"
+    },
+    "PS": {
+        "name": "Priest",
+        "shortcut": "PS",
+        "type": "Wizard",
+        "statusModifier": 20,
+        "description": "A holy priest serving the gods"
+    },
+    "Sc": {
+        "name": "Shaman",
+        "shortcut": "Sc",
+        "type": "Wizard",
+        "statusModifier": 0,
+        "description": "A spiritual leader with mystical powers"
+    },
+    "Tm": {
+        "name": "Thaumaturge",
+        "shortcut": "Tm",
+        "type": "Wizard",
+        "statusModifier": 0,
+        "description": "A miracle worker with divine powers"
+    }
+}
